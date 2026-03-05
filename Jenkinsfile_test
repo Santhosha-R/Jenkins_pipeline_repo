@@ -23,6 +23,30 @@ pipeline {
                  '''
             }
         }
+        stage ('STAGE3') {
+            steps {
+                 echo " This is stage 3"
+
+                 sh '''
+                    #!/bin/bash
+                    pwd
+                    ls -lrt
+                    sleep 5
+                 '''
+            }
+        }
+        stage ('STAGE4') {
+            steps {
+                 echo " This is stage 4"
+
+                 sh '''
+                    #!/bin/bash
+                    pwd
+                    ls -lrt
+                    sleep 5
+                 '''
+            }
+        }
     }
 
 }
