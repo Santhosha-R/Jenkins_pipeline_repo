@@ -47,6 +47,18 @@ pipeline {
                  '''
             }
         }
+        stage ('STAGE5') {
+            steps {
+                 echo " This is stage 5"
+
+                 sh '''
+                    #!/bin/bash
+                    pwd
+                    ls -lrt
+                    sleep 5
+                 '''
+            }
+        }
     }
 
 }
