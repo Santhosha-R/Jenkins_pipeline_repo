@@ -1,28 +1,14 @@
 pipeline {
-    agent any
     stages {
-        stage ('STAGE1') {
+        stage (STAGE1) {
             steps {
-                echo " This is stage 1"
-
-                sh '''
-                    sleep 5
-                    echo "This is linux command"
-                 '''
+                echo " This is stage1"
             }
         }
-        stage ('STAGE2') {
+        stage (STAGE2) {
             steps {
-                 echo " This is stage 2"
-
-                 sh '''
-                    #!/bin/bash
-                    pwd
-                    ls -lrt
-                    sleep 5
-                 '''
+                echo "This is stage2"
             }
         }
     }
-
 }
