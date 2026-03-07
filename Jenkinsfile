@@ -21,7 +21,7 @@ pipeline {
                 '''
             }
         }
-    }
+    
         stage('when environment') {
             when {
                 environment name: 'CURRENT_ENV', value: 'prod'
@@ -40,6 +40,7 @@ pipeline {
                 sh 'sleep 10'
             }               
         }
+    }
 }
 
         
