@@ -7,7 +7,7 @@ pipeline {
                     echo "This is satage1"
                     sh ''' 
                         sleep 10
-                        exit 1
+                        
                         '''
                 }
             }
