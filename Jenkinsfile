@@ -9,9 +9,9 @@ pipeline {
     }
 
     stages {
-        stage ('STAGE1 when branch main') {
+        stage ('STAGE1 when branch santhu') {
             when {
-                branch 'main'
+                branch 'santhu'
             }
             steps {
                 echo "This is satage1"
