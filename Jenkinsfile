@@ -27,7 +27,7 @@ pipeline {
                 environment name: 'CURRENT_ENV', value: 'prod'
             }
             steps {
-                echo "This is WINDOWS testing"
+                echo "This is environment testing"
                 sh 'sleep 10'
             }               
         }
@@ -36,7 +36,7 @@ pipeline {
                 expression {params.DEPLOY == true}
             }
             steps {
-                echo "This is WINDOWS testing"
+                echo "This is parameter testing"
                 sh 'sleep 10'
             }               
         }
