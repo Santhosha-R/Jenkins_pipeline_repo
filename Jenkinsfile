@@ -1,25 +1,20 @@
 pipeline {
-    agent none
+    agent any
 
-    parameters {
-        string(name: "NAME",defaultValue:"",description:"please tell me your name")
-        booleanParam(name: "SKIP_TEST",defaultValue:"false",description:"want to skip test run to direct deploy")
-        choice(name: "BRANCH",choices:["master","stagging","prod"],description:"")
+    environment {
+        DOCKER_USER = 'santhu'
+        AWS_ACESS_KEY = '9113675170'
+
     }
     stages {
         stage ('STAGE1') {
-            agent { label 'master'}
 
             steps {
-                echo " NAME: ${params.NAME}"
-                echo " SKIP_TEST: ${params.SKIP_TEST}"
-                echo " BRANCH TO DEPLOY: ${params.BRANCH}"
+                echo " DOCKER_USER: ${env.DOCKER_USER}"
+                echo " AWS_ACESS_KEY: ${env.AWS_ACESS_KEY}"
 
                 sh '''
-                    echo " NAME: ${NAME}"
-                    echo " SKIP_TEST: ${SKIP_TEST}"
-                    echo " BRANCH TO DEPLOY: ${BRANCH}"
-
+                    env
                 '''
             }
         }
