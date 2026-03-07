@@ -3,11 +3,13 @@ pipeline {
     stages {
         stage ('STAGE1') {
             steps {
-                echo "This is satage1"
-                sh ''' 
-                    sleep 10
-                    exit 1
-                    '''
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    echo "This is satage1"
+                    sh ''' 
+                        sleep 10
+                        exit 1
+                        '''
+                }
             }
         }
         stage('PARALLEL TESTING') {
