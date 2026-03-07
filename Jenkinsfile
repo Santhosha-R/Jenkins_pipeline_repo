@@ -1,19 +1,19 @@
 pipeline {
-    agent any
+    agent none
+
+    parameters {
+        string(name: "NAME",defaultValue:"",description:"please tell me your name")
+        booleanParam(name: "SKIP_TEST",defaultValue:"false",description:"want to skip test run to direct deploy")
+        choice(name: "BRANCH",choices:["master","stagging","prod"],description:"")
+    }
     stages {
-        stage (STAGE1) {
+        stage ('STAGE1') {
+            agent { label 'master'}
+
             steps {
-                echo " This is stage1"
-            }
-        }
-        stage (STAGE2) {
-            steps {
-                echo "This is stage2"
-            }
-        }
-        stage (STAGE3) {
-            steps {
-                echo "This is stage3"
+                echo " NAME: ${params.NAME}"
+                echo " SKIP_TEST: ${params.SKIP_TEST}"
+                echo " BRANCH TO DEPLOY: ${params.BRANCH}"
             }
         }
     }
