@@ -8,7 +8,7 @@ pipeline {
             agent { label 'master'}
 
             steps {
-                echo " This is stage 1"
+                
 
                 sh '''
                     sleep 5
