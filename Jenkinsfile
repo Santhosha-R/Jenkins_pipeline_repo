@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    // parameters {
-    //     booleanParam(name: 'DEPLOY', description: 'wants to deploy production')
-    // }
+    parameters {
+        booleanParam(name: 'DEPLOY', description: 'wants to deploy production')
+    }
 
     environment {
         CURRENT_ENV = 'prodaa'
@@ -49,15 +49,15 @@ pipeline {
                 sh 'sleep 10'
             }               
         }
-        // stage('when parameter') {
-        //     when {
-        //         expression {params.DEPLOY == true}
-        //     }
-        //     steps {
-        //         echo "This is parameter testing"
-        //         sh 'sleep 10'
-        //     }               
-        // }
+        stage('when parameter') {
+            when {
+                expression {params.DEPLOY == true}
+            }
+            steps {
+                echo "This is parameter testing"
+                sh 'sleep 10'
+            }               
+        }
     }
 }
 
