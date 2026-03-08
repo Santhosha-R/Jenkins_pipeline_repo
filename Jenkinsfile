@@ -11,11 +11,11 @@ pipeline {
     stages {
         stage ('CHECKOUT') {
             steps {
-                checkout ([ $class: 'GitSCM',
+                checkout([ $class: 'GitSCM',
                             branches: [[name: '*/main']], 
                             extensions: [], 
                             userRemoteConfigs: [[url: 'https://github.com/Santhosha-R/Tejasthu.git']]
-                ])
+                        ])
             }
             
                 sh '''
@@ -23,8 +23,8 @@ pipeline {
                     echo BRANCH_NAME: $BRANCH_NAME
 
                 '''            
-            }              
-        }
+        }              
+    
         stage ('STAGE1 when branch main') {
             when {
                 expression {
