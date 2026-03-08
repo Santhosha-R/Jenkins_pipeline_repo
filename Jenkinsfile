@@ -11,10 +11,10 @@ pipeline {
     stages {
         stage ('CHECKOUT') {
             steps {
-                checkout ([ git branch: 'main', 
-                            credentialsId: 'HP-git', 
-                            url: 'https://github.com/Santhosha-R/Tejasthu.git'
-                ])       
+                git branch: 'main', 
+                credentialsId: 'HP-git', 
+                url: 'https://github.com/Santhosha-R/Tejasthu.git'
+                
                 // sh '''
                 //     echo GIT_BRANCH: $GIT_BRANCH
                 //     echo BRANCH_NAME: $BRANCH_NAME
