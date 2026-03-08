@@ -18,7 +18,7 @@ pipeline {
                 ])
             }              
         }
-        stage ('STAGE1 when branch santhu') {
+        stage ('STAGE1 when branch main') {
             when {
                 branch 'main'
             }
