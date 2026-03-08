@@ -16,13 +16,13 @@ pipeline {
                             extensions: [], 
                             userRemoteConfigs: [[url: 'https://github.com/Santhosha-R/Tejasthu.git']]
                         ])
-            }
-            
+                       
                 sh '''
                     echo GIT_BRANCH: $GIT_BRANCH
                     echo BRANCH_NAME: $BRANCH_NAME
 
                 '''            
+            }
         }              
     
         stage ('STAGE1 when branch main') {
