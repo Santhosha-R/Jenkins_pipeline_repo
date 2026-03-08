@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-        CURRENT_ENV = 'prodAA'
+        CURRENT_ENV = 'prod'
     }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
                             branches: [[name: '*/main']], 
                             extensions: [], 
                             userRemoteConfigs: [[url: 'https://github.com/Santhosha-R/Tejasthu.git']]
-                        ])
+                ])
             }              
         }
         stage ('STAGE1 when branch santhu') {
