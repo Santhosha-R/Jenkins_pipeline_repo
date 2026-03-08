@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM (H/3 * * * *)
+        pollSCM (H/2 * * * *)
     }
     parameters {
         booleanParam(name: 'DEPLOY', description: 'wants to deploy production')
