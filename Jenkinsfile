@@ -28,7 +28,7 @@ pipeline {
         stage ('STAGE1 when branch main') {
             when {
                 expression {
-                    return env.GIT_BRANCH == 'origin/main'
+                    return env.GIT_BRANCH == 'origin/santhu'
                 }
             }
             steps {
