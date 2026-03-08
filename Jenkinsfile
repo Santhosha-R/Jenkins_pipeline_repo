@@ -9,15 +9,25 @@ pipeline {
     }
 
     stages {
+        stage ('CHECKOUT') {
+            steps {
+                checkout ([ $class: 'GitSCM',
+                            branches: [[name: '*/main']], 
+                            extensions: [], 
+                            userRemoteConfigs: [[url: 'https://github.com/Santhosha-R/Tejasthu.git']]
+                        ])
+            }              
+        }
         stage ('STAGE1 when branch santhu') {
             when {
-                branch 'santhu'
+                branch 'main'
             }
             steps {
                 echo "This is satage1"
                 sh '''
-                    sleep 10'
-                    EXIT 1
+                    pwd
+                    ls -lrt
+                    sleep 10
                 '''
             }
         }
