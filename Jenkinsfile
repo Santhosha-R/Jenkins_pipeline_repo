@@ -1,6 +1,10 @@
 pipeline {
      // agent { label 'slave1 && slave2' }
     agent { label 'slave1 || slave2' }
+
+    options {
+        ansiColor('xterm')
+    }
     stages {
         stage ('STAGE1') {
             steps {
