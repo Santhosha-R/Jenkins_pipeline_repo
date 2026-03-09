@@ -30,7 +30,7 @@ pipeline {
                 sh '''
                     whoami
                     sleep 5
-                    echo '\e[34msanthu \e[33mteju'
+                    echo '\003[34msanthu \003[33mteju'
                 '''
             }
         }
