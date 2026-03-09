@@ -4,19 +4,28 @@ pipeline {
         stage ('STAGE1') {
             steps {
                 echo "This is stage1 running"
-                sh 'pwd'
+                sh '''
+                    pwd
+                    sleep 10
+                '''
             }
         }
         stage ('STAGE2') {
             steps {
                 echo "This is stage2 running"
-                sh 'ls'
+                sh '''
+                    ls
+                    sleep 10
+                '''
             }
         }
         stage ('STAGE3') {
             steps {
                 echo "This is stage3 running"
-                sh 'whoami'
+                sh '''
+                    whoami
+                    sleep 10
+                '''
             }
         }
     }
