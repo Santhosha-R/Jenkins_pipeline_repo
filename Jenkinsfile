@@ -1,12 +1,12 @@
 pipeline {
-    agent any
+    agent { label 'slave1'}
     stages {
         stage ('STAGE1') {
             steps {
                 echo "This is stage1 running"
                 sh '''
                     pwd
-                    sleep 10
+                    sleep 5
                 '''
             }
         }
@@ -15,7 +15,7 @@ pipeline {
                 echo "This is stage2 running"
                 sh '''
                     ls
-                    sleep 10
+                    sleep 5
                 '''
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                 echo "This is stage3 running"
                 sh '''
                     whoami
-                    sleep 10
+                    sleep 5
                 '''
             }
         }
